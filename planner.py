@@ -15,7 +15,7 @@ def save_meal_plan(plan):
         json.dump(plan, f, indent=2)
 
 def display_plan(plan):
-    print("\n📅 Weekly Meal Plan:")
+    print("\nWeekly Meal Plan:")
     for day, info in plan.items():  
         if info:
             print(f"{day}: {info['meal']} (Ingredients: {', '.join(info['ingredients'])})")
@@ -46,7 +46,7 @@ def generate_shopping_list(plan):
     for day in plan:
         if plan[day]:
             ingredients_set.update(plan[day]["ingredients"])
-    print("\n🛒 Shopping List:")
+    print("\nShopping List:")
     if ingredients_set:
         for item in sorted(ingredients_set):
             print(f"- {item}")
